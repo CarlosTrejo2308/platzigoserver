@@ -1,0 +1,116 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Platzi Server",
+  "steps": [
+    {
+      "file": "main.go",
+      "description": "In this project, we will host a server on port 8081 and handle fibonacci requests",
+      "line": 153
+    },
+    {
+      "file": "main.go",
+      "description": "First, we will define some constants for our project",
+      "line": 154
+    },
+    {
+      "file": "main.go",
+      "description": "This is the number of workers that will handle the requests from the server",
+      "line": 155
+    },
+    {
+      "file": "main.go",
+      "description": "This is the maxmum number of jobs we will have in the queue",
+      "line": 156
+    },
+    {
+      "file": "main.go",
+      "description": "The jobqueue will recive all the requests from the server",
+      "line": 161
+    },
+    {
+      "file": "main.go",
+      "description": "The dispacher will be the middle man from the jobs to the workers",
+      "line": 162
+    },
+    {
+      "file": "main.go",
+      "description": "Lets look how it works...",
+      "line": 163
+    },
+    {
+      "file": "main.go",
+      "description": "This is the initializer, it will return a dispacher so we can run it",
+      "line": 80
+    },
+    {
+      "file": "main.go",
+      "description": "It will return this dispacher struct, it consist of 3 fields:\n- WorkerPool: Each worker, will have his own channel of jobs\n- MaxWorkers: How many workers we will have\n- JobQueue: The total jobs to be procesed",
+      "line": 31,
+      "selection": {
+        "start": {
+          "line": 28,
+          "character": 2
+        },
+        "end": {
+          "line": 28,
+          "character": 12
+        }
+      }
+    },
+    {
+      "file": "main.go",
+      "description": "Now, we will run the dispacher. First, it will create the workers and start them, let's see how that works...",
+      "line": 112
+    },
+    {
+      "file": "main.go",
+      "description": "Here, it will add the current job queue, to the dispacher worker pool. We have to this in a loop, becouse the jobqueue will get consumed.\n\nThen, we will recive a job from the worker queue. It will process it and print out the fib result",
+      "line": 61
+    },
+    {
+      "file": "main.go",
+      "description": "Then, we will dispach the dispacher. What that means is that for each jbo we recive, we will get a job channel from the workerpool and asign the job to it. \n\nHere, as we said before, will consume the job channel",
+      "line": 98
+    },
+    {
+      "file": "main.go",
+      "description": "Then, here we will add our api to handle the fib requests:",
+      "line": 164,
+      "selection": {
+        "start": {
+          "line": 101,
+          "character": 22
+        },
+        "end": {
+          "line": 101,
+          "character": 25
+        }
+      }
+    },
+    {
+      "file": "main.go",
+      "description": "We get all the variables we need to create a job",
+      "line": 136
+    },
+    {
+      "file": "main.go",
+      "description": "And then we send it to the dispacher jobqueue",
+      "line": 146,
+      "selection": {
+        "start": {
+          "line": 146,
+          "character": 2
+        },
+        "end": {
+          "line": 146,
+          "character": 10
+        }
+      }
+    },
+    {
+      "file": "main.go",
+      "description": "Who, will recive it here and be process it by the worker",
+      "line": 91
+    }
+  ]
+}
