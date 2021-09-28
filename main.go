@@ -155,8 +155,8 @@ func main() {
 	)
 
 	// Buffer channel to store workers
-	jobQueue := make(chan Job, maxQueue) // will handle all jobs recived from the requests
-	dispatcher := NewDispatcher(jobQueue, maxWorkers)
+	jobQueue := make(chan Job, maxQueue)              // will handle all jobs recived from the requests
+	dispatcher := NewDispatcher(jobQueue, maxWorkers) // midleman jobs to workers
 	dispatcher.Run()
 
 	http.HandleFunc("/fib", func(w http.ResponseWriter, r *http.Request) {
